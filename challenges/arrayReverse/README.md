@@ -1,5 +1,23 @@
+# Challenge Summary
+<!-- Short summary or background information -->
+i have no background about reflexing array but it is an interesting thing to be learned 
 
-![my Whitboard except code]('https://i.ibb.co/4mjM5x8/image-2020-12-28-074238.png')
+## Challenge Description
+<!-- Description of the challenge -->
+today's code challenge is writting a method that has an array as an input and will retrun the same array revarsed
 
-![my code](https://i.ibb.co/gRvSWfC/image-2020-12-28-074409.png')
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I started the loop from the end and which what gave me the ability to do exactly as wanted 
+Space: big O(m*n+1)
+m: the length of the array
+speed: big O(1)
+
+## Solution
+
+
+
+![my Whitboard except code]('./assets/ch1.jpg')
+
+![my code]('./assets/code1.jpg')
 

@@ -11,8 +11,9 @@ today's code challenge is writting the method splice somehow becasue it looks ex
 I used copying array approach to make a copy of the array and avoid being changed when entering a value to it.
 Space: big O(m*n+1)
 m: the length of the array
-speed: big O(1)
+speed: big O(2)
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![whiteBoard]('')
+![whiteBoard]('./assets/ch2.jpg')
+![code]('./assets/code2.jpg')
