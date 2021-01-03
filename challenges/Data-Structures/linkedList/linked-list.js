@@ -77,8 +77,9 @@ class LinkedList {
 
 }
 
-let LL = new LinkedList ();
-LL.append(4).append(3).append(2);
-LL.insert(77);
-LL.includes(2)
-LL.toString();
+// let LL = new LinkedList ();
+// LL.append(4).append(3).append(2);
+// LL.insert(77);
+// LL.includes(2)
+// LL.toString();
+module.exports = LinkedList;
