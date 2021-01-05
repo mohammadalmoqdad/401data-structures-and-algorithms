@@ -88,24 +88,28 @@ class LinkedList {
 
 
     insertBefore(value, newVal) {
-        let currentNode = this.head;
+        try {
 
-        if (currentNode.value == value) {
-            // adding it at the beagaining
-            this.insert(newVal);
-        }
-
-        while (currentNode.next) {
-
-            if (currentNode.next.value == value) {
-                let node = new Node(newVal);
-                node.next = currentNode.next;
-                currentNode.next = node;
-
+            let currentNode = this.head;
+            if (currentNode.value == value) {
+                // adding it at the beagaining
+                this.insert(newVal);
             }
-            currentNode = currentNode.next.next;
-        }
 
+            while (currentNode.next) {
+                if (currentNode.next.value == value) {
+                    let node = new Node(newVal);
+                    node.next = currentNode.next;
+                    currentNode.next = node;
+                }
+                currentNode = currentNode.next.next;
+            }
+
+
+        }
+        catch (e) {
+            return false;
+        }
     }
 
 
@@ -116,34 +120,34 @@ class LinkedList {
 
 
     insertAfter(value, newVal) {
-        try{
+        try {
 
-        
-        let currentNode = this.head;
-        while (currentNode.next) {
 
-            if (currentNode.value == value) {
-                // to avoid adding the last element twice I added the && 
-                let node = new Node(newVal);
-                node.next = currentNode.next;
-                currentNode.next = node;
+            let currentNode = this.head;
+            while (currentNode.next) {
+
+                if (currentNode.value == value) {
+                    // to avoid adding the last element twice I added the && 
+                    let node = new Node(newVal);
+                    node.next = currentNode.next;
+                    currentNode.next = node;
+                }
+                if (!currentNode.next.next && currentNode.next.value == value) {
+                    // or I can just use the this.append(method)
+                    let node = new Node(newVal);
+                    node.next = null
+                    console.log(currentNode)
+                    currentNode.next.next = node;
+                    console.log(currentNode)
+
+                }
+                currentNode = currentNode.next;
             }
-            if (!currentNode.next.next && currentNode.next.value == value) {
-                // or I can just use the this.append(method)
-                let node = new Node(newVal);
-                node.next = null
-                console.log(currentNode)
-                currentNode.next.next = node;
-                console.log(currentNode)
-
-            }
-            currentNode = currentNode.next;
+            return true;
         }
-        return true;
-    }
-    catch(e){
-        return false;
-    }
+        catch (e) {
+            return false;
+        }
     }
 
 
