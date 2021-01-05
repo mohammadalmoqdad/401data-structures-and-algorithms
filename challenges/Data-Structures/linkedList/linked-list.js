@@ -116,38 +116,55 @@ class LinkedList {
 
 
     insertAfter(value, newVal) {
-        try{
+        try {
 
-        
-        let currentNode = this.head;
-        while (currentNode.next) {
 
-            if (currentNode.value == value) {
-                // to avoid adding the last element twice I added the && 
-                let node = new Node(newVal);
-                node.next = currentNode.next;
-                currentNode.next = node;
+            let currentNode = this.head;
+            while (currentNode.next) {
+
+                if (currentNode.value == value) {
+                    // to avoid adding the last element twice I added the && 
+                    let node = new Node(newVal);
+                    node.next = currentNode.next;
+                    currentNode.next = node;
+                }
+                if (!currentNode.next.next && currentNode.next.value == value) {
+                    // or I can just use the this.append(method)
+                    let node = new Node(newVal);
+                    node.next = null
+                    console.log(currentNode)
+                    currentNode.next.next = node;
+                    console.log(currentNode)
+
+                }
+                currentNode = currentNode.next;
             }
-            if (!currentNode.next.next && currentNode.next.value == value) {
-                // or I can just use the this.append(method)
-                let node = new Node(newVal);
-                node.next = null
-                console.log(currentNode)
-                currentNode.next.next = node;
-                console.log(currentNode)
-
-            }
-            currentNode = currentNode.next;
+            return true;
         }
-        return true;
+        catch (e) {
+            return false;
+        }
     }
-    catch(e){
-        return false;
-    }
+
+
+
+
+    kthFromEnd(k) {
+        let current = this.head;
+        let values = [];
+        while (current) {
+            values.push(current.value);
+            current = current.next;
+        }
+        if      (k > values.length || k < 0) return "enter allowed value"
+        else    return values[values.length - k]
     }
 
 
 }
+
+
+
 
 // let LL = new LinkedList();
 // LL.append(4)
