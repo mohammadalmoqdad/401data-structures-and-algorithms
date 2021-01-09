@@ -1,24 +1,27 @@
-let LinkedList = require('../Data-Structures/linkedList/linked-list')
+let LinkedList = require('../Data-Structures/linkedList/linked-list.js')
 
 function zipLists(ll1, ll2) {
-    let currentNode1 = ll1.head1;
-    let currentNode2 = ll2.head1;
-    let arr = [];
-    while (currentNode1 || currentNode1) {
+    let currentNode1 = ll1.head;
+    let currentNode2 = ll2.head;
+    let ll3 = new LinkedList();
+    if (!currentNode1 && !currentNode2) return null;
+    while (currentNode1 || currentNode2) {
+
         if (currentNode1) {
-            arr.push(currentNode1.value)
+            ll3.append(currentNode1.value)
         }
+
         if (currentNode2) {
-            arr.push(currentNode2.value)
+            ll3.append(currentNode2.value)
         }
-        currentNode1 = currentNode1.next;
-        currentNode2 = currentNode2.next;
+
+        if (currentNode1) currentNode1 = currentNode1.next;
+        if (currentNode2) currentNode2 = currentNode2.next;
+
     }
-    console.log(arr.join(''))
-    return arr.join('')
+
+    return ll3;
 }
-let ll1 = new LinkedList();
-let ll2 = new LinkedList();
-ll1.append(2).append(3).append(4);
-ll2.append(5).append(6).append(7);
-zipLists(ll1, ll2)
+
+
+module.exports = zipLists;
