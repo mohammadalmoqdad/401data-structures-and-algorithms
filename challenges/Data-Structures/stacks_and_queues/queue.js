@@ -22,22 +22,6 @@ class Queue {
     }
 
 
-
-
-    enqueue(value) {
-        let node = new Node(value);
-        if (!this.front) {
-            this.front = node;
-            this.rear = node;
-        } else {
-            this.rear.next = node;
-            this.rear = node;
-        }
-        return this;
-    }
-
-
-
     dequeue() {
         if (!this.front) throw new Error(" Can not remove element from empty queue! ")
         let front2 = this.front;

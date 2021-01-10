@@ -73,11 +73,11 @@ describe('Stack Model', () => {
 
 
 
-    
+
     it('Calling pop or peek on empty stack raises exception', () => {
         let stack = new Stack();
-        expect(stack.peek()).toThrow();
-        expect(stack.pop()).toThrow();
+        expect(stack.peek()).toThrow(" Can not peek() when Stack is empty! ");
+        expect(stack.pop()).toThrow(" Can not pop() when Stack is empty! ");
 
     });
 
