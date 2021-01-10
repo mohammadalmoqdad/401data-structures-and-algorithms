@@ -1,7 +1,7 @@
 let LinkeList = require('../linked-list.js');
 let zipLists = require('../../../llZip/ll-zip.js');
 
-describe("linked List model test code challenge 3", () => {
+xdescribe("linked List model test code challenge 3", () => {
 
     it("The new linked lists should involve both entered linkedLists", () => {
         let ll1 = new LinkeList();
