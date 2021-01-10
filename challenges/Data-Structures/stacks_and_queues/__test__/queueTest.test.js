@@ -12,7 +12,7 @@ describe('Queue Model', () => {
     });
 
 
-    
+
     it('The enqueue & dequeue is done perfectly ', () => {
         let que = new Queue();
         que.enqueue(1).enqueue(2).enqueue(3).enqueue(4)
@@ -49,8 +49,8 @@ describe('Queue Model', () => {
 
     it('Calling dequeue or peek on empty queue raises exception', () => {
         let que = new Queue();
-        expect(que.peek()).toThrow();
-        expect(que.dequeue()).toThrow();
+        expect(que.peek()).toThrow(" Can not peek element from empty queue! ");
+        expect(que.dequeue()).toThrow(" Can not remove element from empty queue! ");
 
     });
 
