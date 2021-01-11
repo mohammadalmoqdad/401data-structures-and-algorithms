@@ -1,7 +1,7 @@
 
 const Stack = require('../stack.js');
 
-describe('Stack Model', () => {
+xdescribe('Stack Model', () => {
 
 
     it('Can successfully push onto a stack', () => {
