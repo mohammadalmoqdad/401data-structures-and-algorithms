@@ -24,15 +24,13 @@ class Stack {
     }
     peek() {
         if (!this.top) throw new Error(" Can not peek() when Stack is empty! ")
-        return this.top;
+        return this.top.value;
     }
     isEmpty(){
         if(!this.top) {
-            console.log(true)
              return true;
         }
         else {
-            console.log(false);
             return false;}
     }
 }
