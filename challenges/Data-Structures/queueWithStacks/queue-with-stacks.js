@@ -8,7 +8,11 @@ class PseudoQueue {
         this.stack2 = new Stack();
     }
 
+
+
+
     enqueue(value) {
+
         if (!this.front) {
             this.stack1.push(value)
             this.front = this.stack1.peek();
@@ -19,31 +23,36 @@ class PseudoQueue {
             this.rear = this.stack1.peek();
         }
 
-
+        return this;
     }
+
+
+
+
     dequeue() {
 
         if (!this.stack1.isEmpty()) {
             while (this.stack1.top) {
                 this.stack2.push(this.stack1.pop());
             }
-           
-            let removedItem =  this.stack2.pop();
-             let counter = 0;
+
+            let removedItem = this.stack2.pop();
+            let counter = 0;
             while (this.stack2.top) {
                 this.stack1.push(this.stack2.pop());
                 counter++;
-                if(counter == 1){
+                if (counter == 1) {
                     // for the first iteration in the loop
                     this.front = this.stack1.peek()
                 }
             }
             return removedItem;
         }
-        else throw new Error()
+        else return false;
     }
 }
 
+module.exports = PseudoQueue;
 
 // let q = new PseudoQueue();
 // q.enqueue(22);
