@@ -64,6 +64,24 @@ class BinarySearchTree extends BinaryTree {
         if(result.includes(value)) return true;
         else return false;
     }
+
+
+    find_maximum_value(){
+        let maxValue = 0;
+        
+        function _traverse(node) {
+            if(node.value > maxValue) maxValue = node.value;
+            if (node.right) _traverse(node.right);
+            else return maxValue;
+        }
+       return _traverse(this.root);
+        
+
+
+    }
+
+
+
 }
 
 module.exports = BinarySearchTree;
