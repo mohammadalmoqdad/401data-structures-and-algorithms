@@ -1,7 +1,7 @@
 const Node = require('./node');
 class BinaryTree {
     constructor(root = null) {
-        this.root =root;
+        this.root = root;
     }
 
     preOrder() {
@@ -43,10 +43,27 @@ class BinaryTree {
 
     }
 
-    breadthFirst(BTree){
-
+    breadthFirst(BTree) {
+        let listOfNodes = [];
+        let root = BTree.root;
+        function _traverse(current) {
+            listOfNodes.push(current.value);
+            if (current.left) {
+                _traverse(node.left);
+            }
+            if (current.right) {
+                _traverse(node.right);
+            }
+        }
     }
 
+
+
+
+
+
+
+    
 }
 
 module.exports = BinaryTree;
