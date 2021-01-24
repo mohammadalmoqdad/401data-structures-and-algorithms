@@ -44,26 +44,34 @@ class BinaryTree {
     }
 
     breadthFirst(BTree) {
-        let listOfNodes = [];
-        let root = BTree.root;
-        function _traverse(current) {
-            listOfNodes.push(current.value);
-            if (current.left) {
-                _traverse(node.left);
-            }
-            if (current.right) {
-                _traverse(node.right);
-            }
-        }
+
+        let visited = [];
+        let queue = [];
+        let current = BTree.root;
+
+        queue.push(current);
+        while (queue.length) {
+            current = queue.shift();
+            visited.push(current.val);
+
+            if (current.left) queue.push(current.left);
+            if (current.right) queue.push(current.right);
+        };
+
+        return visited;
+
     }
-
-
-
-
-
-
-
-    
 }
+
+
+
+
+
+
+
+
+}
+
+
 
 module.exports = BinaryTree;

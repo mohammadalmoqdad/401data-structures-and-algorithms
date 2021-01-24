@@ -26,7 +26,7 @@ class Queue {
         if (!this.front) throw new Error(" Can not remove element from empty queue! ")
         let front2 = this.front;
         this.front = this.front.next;
-        return front2.value;
+        return front2;
     }
 
 
