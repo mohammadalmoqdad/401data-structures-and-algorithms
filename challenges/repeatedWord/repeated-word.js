@@ -6,8 +6,6 @@ function repeatedWord(str) {
     let hashtable = new HashTable(words.length);
     for (let i = 0; i < words.length; i++) {
         hashtable.set(words[i], words[i])
-        let y = hashtable
-        console.log(y)
         if (checkFirstAddition(hashtable)) {
             return words[i];
         }
@@ -26,13 +24,15 @@ function splitIntoSingleWord(str) {
 }
 
 function checkFirstAddition(hashtable) {
-    hashtable.table.forEach((data, i) => {
-        if (data) {
-            if (data.values().length > 0) {
-                return "anything";
+    for (let i = 0; i < hashtable.table.length; i++) {
+        if (hashtable.table[i]) {
+            if (hashtable.table.values().length > 0) {
+                console.log("test")
+                return true
             }
         }
-    })
+    }
+
 
 }
 
