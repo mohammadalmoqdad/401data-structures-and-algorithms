@@ -47,7 +47,7 @@ class HashTable {
     hash(key) {
         // hash the key and return the hashed value
         const sumCharCode = key.split('').reduce((acc, char) => {
-            return acc + char.charCodeAt(0)
+            return acc + char.charCodeAt(0) // return ASCHII Ocode f the char
         }, 0);
         // console.log("sumCharCode >>>> ", sumCharCode);
         // we need to multiply by a prime number, and then get % of size
@@ -65,11 +65,17 @@ class HashTable {
         this.table[hash].add(entry);
     }
 
-    contains(val) {
 
+
+    contains(key) {
+        if(this.table[this.hash(key)]) return true
+        else return false
     }
 
-
+    get(key){
+        if(this.contains(key)) return this.table[this.hash(key)] // or return this.table[this.hash(key)].values()
+        else return null;
+    }
 }
 
 
@@ -88,6 +94,6 @@ class HashTable {
 //         console.log(data.values());
 //     }
 // })
-// console.log(hashTable)
+// console.log(hashTable.get("act"))
 
 module.exports = HashTable;
