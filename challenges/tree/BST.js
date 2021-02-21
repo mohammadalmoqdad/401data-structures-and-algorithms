@@ -75,7 +75,6 @@ class BinarySearchTree extends BinaryTree {
             else return maxValue;
         }
        return _traverse(this.root);
-        
 
 
     }
